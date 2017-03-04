@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.container{
+	width: 1000px;
+	margin: 40px auto;
+}
+
+header{
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+/*.slide{
+    height: 300px;
+    line-height: 30px;
+    margin-bottom: 85px;
+    clear: both;
+}*/
+
+.content{
+    width: 735px;
+    border: 5px solid #F03;
+	border-radius: 0 0 30px 30px;
+    float: right;
+	margin-top: 70px;
+	margin-bottom: 30px;
+}
+
+.left{
+    width: 235px;
+/*    min-height: 300px;*/
+    border: 5px solid #FF0;
+	border-radius: 30px;
+    float: left;
+	margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+footer{
+	height: 250px;
+    clear: both;
+	background-color: #000;
+}
+
+.heading{
+	width: 735px;
+    min-height: 50px;
+    border: 5px solid #F03;
+	border-radius: 30px 30px 0 0;
+	margin-top: -60px;
+	margin-left: -5px;
+	background-color: #FFC;
+}
+
+.heading-label{
+	display: block;
+	color: #F03;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: left;	
+	margin-top: 11px;
+	margin-left: 30px;
+}

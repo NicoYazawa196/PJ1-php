@@ -1,0 +1,221 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.sign-form{
+	width: 400px;
+	/*height: 100%;*/
+	display: inline-block;
+	margin: 25px 50px 150px 0;
+}
+
+.sign-label{
+	width: 131px;
+    display: block;
+    float: left;
+    clear: left; /* The clear property specifies which side(s) of an element 
+    				other floating elements are not allowed. */
+    color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 25px;
+	margin-top: 5px;
+    text-align: right;
+}
+
+.sign-input{
+	width: 200px;
+	height: 25px;
+    display: block;
+    float: left; 
+	border-radius: 10px;
+	padding-left: 10px;
+	margin: 0 0 12px 5px; /* top right bottom left */
+
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -ms-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+}
+
+br{
+	clear: both;
+}
+
+.sign-submit{
+	background-color: #63F;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-left: 100px;
+}
+.sign-submit:hover{
+	background-color: #39F;
+}
+
+#sign-gender{
+	display: inline-block;
+    color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 8px;
+	margin-right: 40px;
+	margin-bottom: 15px;
+}
+
+
+/*-- Form góp ý --*/
+.gopy{
+	width: 400px;
+	display: inline-block;
+	margin: 25px 150px 100px -100px;
+}
+
+.label-gopy{
+	width: 131px;
+    display: block;
+    float: left;
+    clear: left; /* The clear property specifies which side(s) of an element 
+    				other floating elements are not allowed. */
+    color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 25px;
+	margin-top: 5px;
+    text-align: right;
+}
+
+.input-gopy{
+	width: 200px;
+	height: 25px;
+    display: block;
+    float: left; 
+	border-radius: 10px;
+	padding-left: 10px;
+	margin: 0 0 12px 5px; /* top right bottom left */
+
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -ms-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+}
+
+.label-comment1{
+	width: 131px;
+    display: block;
+    float: left;
+    clear: left; /* The clear property specifies which side(s) of an element 
+    				other floating elements are not allowed. */
+    color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 25px;
+	margin-top: 40px;
+    text-align: right;
+}
+
+.label-comment2{
+	width: 131px;
+    display: block;
+    float: left;
+    clear: left; /* The clear property specifies which side(s) of an element 
+    				other floating elements are not allowed. */
+    color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 25px;
+    text-align: right;
+}
+
+.input-comment1{
+	width: 200px;
+	height: 25px;
+    display: block;
+    float: left; 
+	border-radius: 10px;
+	padding-left: 10px;
+	margin: 35px 0 12px 5px; /* top right bottom left */
+}
+
+.input-comment2{
+	margin: -15px 0 0 160px;
+	padding: 10px 0 0 10px;
+	border-radius: 10px;
+}
+
+.submit-gopy{
+	background-color: #63F;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+	margin: 20px -90px 0 100px;
+}
+
+.submit-gopy:hover{
+	background-color: #39F;
+}
+/*-- End form góp ý --*/
+
+
+/*-- Sửa thông tin --*/
+.sign-sua{
+	background-color: #63F;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+	margin: 10px -60px 0 70px;
+}
+.sign-sua:hover{
+	background-color: #39F;
+}
+/*-- End sửa thông tin --*/
+
+
+/*-- Mua hàng --*/
+.label-muahang{
+	width: 131px;
+    display: block;
+    float: left;
+    clear: left;
+    color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-right: 25px;
+	margin-left: -100px;
+    text-align: right;
+}
+
+.input-muahang{
+	width: 200px;
+	height: 25px;
+    display: block;
+    float: left; 
+	border-radius: 10px;
+	padding-left: 10px;
+	margin: 0 0 12px 5px;	
+}
+
+.input-yeucau{
+	margin: -170px 0 0 100px;
+	padding: 10px 0 0 10px;
+	border-radius: 10px;
+}
+
+.submit-muahang{
+	background-color: #63F;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-top: 15px;
+	margin-left: 100px;
+}
+.submit-muahang:hover{
+	background-color: #39F;
+}
+/*-- End mua hàng --*/

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_unicode_ci">sieuthixegiagoc</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="admin" view="colnames">
+<left>320</left>
+<top>186</top>
+<width>119</width>
+<height>307</height>
+<sql_create_table>CREATE TABLE `admin` (
+  `Email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `MatKhau` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `HoTen` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `GioiTinh` enum('nam','nu','khac') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SDT` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NgayTao` datetime DEFAULT NULL,
+  `MaQuyen` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="chitietdh" view="colnames">
+<left>320</left>
+<top>12</top>
+<width>115</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `chitietdh` (
+  `MaDH` int(11) NOT NULL,
+  `MaSP` int(11) NOT NULL,
+  `SoLuong` int(11) DEFAULT NULL,
+  `Gia` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`MaDH`,`MaSP`),
+  KEY `MaSP` (`MaSP`),
+  CONSTRAINT `MaDH` FOREIGN KEY (`MaDH`) REFERENCES `donhang` (`MaDH`),
+  CONSTRAINT `MaSP` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="gopy" view="colnames">
+<left>20</left>
+<top>184</top>
+<width>113</width>
+<height>311</height>
+<sql_create_table>CREATE TABLE `gopy` (
+  `MaGopY` int(11) NOT NULL AUTO_INCREMENT,
+  `Email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `HoTen` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SDT` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TieuDe` varbinary(255) DEFAULT NULL,
+  `NoiDung` text COLLATE utf8_unicode_ci,
+  `NgayGopY` datetime DEFAULT NULL,
+  PRIMARY KEY (`MaGopY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="nhasanxuat" view="colnames">
+<left>20</left>
+<top>10</top>
+<width>117</width>
+<height>148</height>
+<sql_create_table>CREATE TABLE `nhasanxuat` (
+  `MaNSX` int(11) NOT NULL AUTO_INCREMENT,
+  `TenNSX` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`MaNSX`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="quangcao" view="colnames">
+<left>472</left>
+<top>11</top>
+<width>112</width>
+<height>148</height>
+<sql_create_table>CREATE TABLE `quangcao` (
+  `MaQC` int(11) NOT NULL AUTO_INCREMENT,
+  `TenQC` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `HinhAnh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `STT` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MaQC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="sanpham" view="colnames">
+<left>168</left>
+<top>186</top>
+<width>118</width>
+<height>307</height>
+<sql_create_table>CREATE TABLE `sanpham` (
+  `MaSP` int(11) NOT NULL AUTO_INCREMENT,
+  `TenSP` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Gia` decimal(10,0) DEFAULT NULL,
+  `HinhAnh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MaNSX` int(11) DEFAULT NULL,
+  `BaoHanh` int(11) DEFAULT NULL,
+  `SoLuong` int(11) DEFAULT NULL,
+  `MoTa` text COLLATE utf8_unicode_ci,
+  `NgayThem` datetime DEFAULT NULL,
+  `NgaySua` datetime DEFAULT NULL,
+  `TrangThai` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MaSP`),
+  KEY `MaNSX` (`MaNSX`),
+  CONSTRAINT `MaNSX` FOREIGN KEY (`MaNSX`) REFERENCES `nhasanxuat` (`MaNSX`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="tintuc" view="colnames">
+<left>178</left>
+<top>13</top>
+<width>105</width>
+<height>147</height>
+<sql_create_table>CREATE TABLE `tintuc` (
+  `MaTT` int(11) NOT NULL AUTO_INCREMENT,
+  `TieuDe` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TacGia` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NoiDung` text COLLATE utf8_unicode_ci,
+  `NgayDang` datetime DEFAULT NULL,
+  PRIMARY KEY (`MaTT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="donhang" view="colnames">
+<left>470</left>
+<top>186</top>
+<width>116</width>
+<height>309</height>
+<sql_create_table>CREATE TABLE `donhang` (
+  `MaDH` int(11) NOT NULL AUTO_INCREMENT,
+  `MaPTTT` int(11) DEFAULT NULL,
+  `EmailND` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TenND` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChiND` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SDTND` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `EmailNN` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TenNN` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChiNN` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SDTNN` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `YeuCau` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `TrangThai` enum('moi','chott','datt','huy') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NgayDat` datetime DEFAULT NULL,
+  `TongTien` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`MaDH`),
+  KEY `MaPTTT` (`MaPTTT`),
+  KEY `Email` (`EmailND`),
+  CONSTRAINT `Email` FOREIGN KEY (`EmailND`) REFERENCES `khachhang` (`Email`),
+  CONSTRAINT `MaPTTT` FOREIGN KEY (`MaPTTT`) REFERENCES `phuongthuctt` (`MaPTTT`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="khachhang" view="colnames">
+<left>616</left>
+<top>186</top>
+<width>113</width>
+<height>306</height>
+<sql_create_table>CREATE TABLE `khachhang` (
+  `Email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `MatKhau` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `HoTen` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NgaySinh` date DEFAULT NULL,
+  `GioiTinh` enum('nam','nu','khac') COLLATE utf8_unicode_ci DEFAULT NULL,
+  `DiaChi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `SDT` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `NgayDK` datetime DEFAULT NULL,
+  `NgayLogin` datetime DEFAULT NULL,
+  PRIMARY KEY (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+<table name="phuongthuctt" view="colnames">
+<left>614</left>
+<top>11</top>
+<width>113</width>
+<height>148</height>
+<sql_create_table>CREATE TABLE `phuongthuctt` (
+  `MaPTTT` int(11) NOT NULL AUTO_INCREMENT,
+  `TenPTTT` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `MoTa` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`MaPTTT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
